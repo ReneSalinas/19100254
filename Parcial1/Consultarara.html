@@ -11,14 +11,13 @@
 
         <script>
             document.getElementById("boton").addEventListener("click",function(){
-                //console. log("click")´aaaa;
                 hacerPeticion();
             });
 
-            function hacerPeticion(){
-                fetch("https://api.waifu.pics/sfw/waifu")
-                .then(respuesta => respuesta.json())
-                .then(datos => document.getElementById('imagen').src=datos.url)
+            async function hacerPeticion(){
+                let respuesta = await fetch ("https://api.waifu.pics/sfw/waifu");
+                let datajson = await respuesta.json();
+                return datajson;
             }
         </script>
     </body>
