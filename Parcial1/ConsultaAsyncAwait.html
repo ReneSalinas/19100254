@@ -7,11 +7,13 @@
     </head>
     <body>
         <button id="boton">HacerFetch</button>
-        <img id="imagen" width=10%>
+        <img id="imagen" width=10% >
 
         <script>
-            document.getElementById("boton").addEventListener("click",function(){
-                hacerPeticion();
+            document.getElementById("boton").addEventListener("click",async function(){
+                let dato = await hacerPeticion();
+                console.log(dato)
+                document.getElementById('imagen').src=dato.url
             });
 
             async function hacerPeticion(){

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Promesa
+        </title>
+    </head>
+    <body>
+        <button id="boton" class="boton"> PRESIONE AQUI </button>
+        <img id="im0"  class="img">
+        <img id="im1"  class="img">
+        <img id="im2"  class="img">
+        <img id="im3"  class="img">
+        <img id="im4"  class="img">
+        <img id="im5"  class="img">
+        
+
+        <script>
+           
+
+           document.getElementById("boton").addEventListener("click",function(){
+
+             for ( i = 0; i <= 5; i++) {
+                
+            
+                name = "im"+i
+                hacerPeticion(name);}
+            });
+
+            function hacerPeticion(name){
+                fetch("https://api.waifu.pics/sfw/highfive")
+                .then(respuesta => respuesta.json())
+                .then(datos => document.getElementById(name).src = datos.url)
+                console.log(i)
+            }
+             
+            
+        </script>
+
+        <style>
+            /* .img{
+                float: left;
+                border: 2px solid gold;
+                margin: 10px;
+                width: calc((100% / 6) - 20px);
+            } */
+            #im0,#im1,#im2{
+                text-align: left;
+                border: 2px solid gold;
+                margin: 10px;
+                width: calc((100% / 3) - 20px);
+            }
+            #im3,#im4,#im5{
+                text-align: right;
+                border: 2px solid gold;
+                margin: 10px;
+                width: calc((100% / 3) - 20px);
+            }
+            body{
+                background-image: url("https://p4.wallpaperbetter.com/wallpaper/88/701/158/nature-peace-peaceful-landscape-wallpaper-preview.jpg");
+                
+                background-size: cover;
+                background-repeat:no-repeat;
+                background-position: center center;
+            }
+            .boton{
+                float: right;
+                width: 350px;
+                background-color: darksalmon;
+            }
+        </style>
+    </body>
+</html>
