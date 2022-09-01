@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text"><br>
+
+
+    <label for="apellido">Apellido:</label>
+    <input id="apellido" type="text"><br>
+
+    <label for="bromachuck">Chuck Norris dice:</label><br>
+    <textarea id="bromachuck" cols="30" rows="10"></textarea>
+
+    <button id="btn_broma">PedirChuck</button>
+
+
+    <script>
+
+        document.getElementById("btn_broma").addEventListener("click",async function(){
+            getBroma();
+
+            
+        });
+
+        async function getBroma(){
+
+            let varNom=document.getElementById("nombre").value;
+            let varApp=document.getElementById("apellido").value;
+            let varURL= "http://api.icndb.com/jokes/random?firstName="+varNom+"&lastName="+varApp;
+                        
+
+            let headersList = {
+        "Accept": "*/*",
+        "User-Agent": "Thunder Client (https://www.thunderclient.com)"
+        }
+
+        let response = await fetch(varURL, { 
+        method: "GET",
+        headers: headersList
+        });
+
+        let data = await response.json();
+        document.getElementById("bromachuck").value = data.value.joke
+        console.log(data);
+        }
+        
+        
+    </script>
+
+</body>
+</html>
