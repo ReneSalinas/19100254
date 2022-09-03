@@ -42,13 +42,13 @@
 | RESPUESTAS INFORMATIVAS | Respuestas satisfactorias  | Redirecciones  | Errores de cliente  | Errores de los servidores  |
 |---|---|---|---|---|
 | 100 Continue: Esta respuesta provisional indica que todo hasta ahora está bien y que el cliente debe continuar con la solicitud o ignorarla si ya está terminada. 
-* 101 Switching Protocol
+101 Switching Protocol
 Este código se envía en respuesta a un encabezado de solicitud Upgrade (en-US) por el cliente e indica que el servidor acepta el cambio de protocolo propuesto por el agente de usuario.
 
-* 102 Processing (WebDAV (en-US))
+102 Processing (WebDAV (en-US))
 Este código indica que el servidor ha recibido la solicitud y aún se encuentra procesandola, por lo que no hay respuesta disponible.
 
-* 103 Early Hints (en-US)
+103 Early Hints (en-US)
 Este código de estado está pensado principalmente para ser usado con el encabezado Link, permitiendo que el agente de usuario empiece a pre-cargar recursos mientras el servidor prepara una respuesta.  | * 200 OK
 La solicitud ha tenido éxito. El significado de un éxito varía dependiendo del método HTTP:
 
