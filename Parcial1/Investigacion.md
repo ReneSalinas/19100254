@@ -39,26 +39,20 @@
 4. Errores de los clientes (400–499).
 5. Errores de los servidores (500–599).
 
-## **RESPUESTAS INFORMATIVAS**
-* 100 Continue
-Esta respuesta provisional indica que todo hasta ahora está bien y que el cliente debe continuar con la solicitud o ignorarla si ya está terminada.
+| hola  | hola  | hola  | hola  | hola  |
+|---|---|---|---|---|
+| hola   | hola  | hola   | hola  | hola  |
 
-* 101 Switching Protocol
+| RESPUESTAS INFORMATIVAS | Respuestas satisfactorias  | Redirecciones  | Errores de cliente  | Errores de los servidores  |
+|---|---|---|---|---|
+| 100 Continue: Esta respuesta provisional indica que todo hasta ahora está bien y que el cliente debe continuar con la solicitud o ignorarla si ya está terminada. 101 Switching Protocol
 Este código se envía en respuesta a un encabezado de solicitud Upgrade (en-US) por el cliente e indica que el servidor acepta el cambio de protocolo propuesto por el agente de usuario.
 
 * 102 Processing (WebDAV (en-US))
 Este código indica que el servidor ha recibido la solicitud y aún se encuentra procesandola, por lo que no hay respuesta disponible.
 
 * 103 Early Hints (en-US)
-Este código de estado está pensado principalmente para ser usado con el encabezado Link, permitiendo que el agente de usuario empiece a pre-cargar recursos mientras el servidor prepara una respuesta.
-
-## **Respuestas satisfactorias**
-GET: El recurso se ha obtenido y se transmite en el cuerpo del mensaje.
-HEAD: Los encabezados de entidad están en el cuerpo del mensaje.
-PUT o POST: El recurso que describe el resultado de la acción se transmite en el cuerpo del mensaje.
-TRACE: El cuerpo del mensaje contiene el mensaje de solicitud recibido por el servidor.
-
-* 200 OK
+Este código de estado está pensado principalmente para ser usado con el encabezado Link, permitiendo que el agente de usuario empiece a pre-cargar recursos mientras el servidor prepara una respuesta.  | * 200 OK
 La solicitud ha tenido éxito. El significado de un éxito varía dependiendo del método HTTP:
 
 * 201 Created
@@ -86,11 +80,7 @@ Una respuesta Multi-Estado transmite información sobre varios recursos en situa
 El listado de elementos DAV ya se notificó previamente, por lo que no se van a volver a listar.
 
 * 226 IM Used (HTTP Delta encoding)
-El servidor ha cumplido una petición GET para el recurso y la respuesta es una representación del resultado de una o más manipulaciones de instancia aplicadas a la instancia actual.
-
-## **Redirecciones**
-
-* 300 Multiple Choice (en-US)
+El servidor ha cumplido una petición GET para el recurso y la respuesta es una representación del resultado de una o más manipulaciones de instancia aplicadas a la instancia actual.  | 300 Multiple Choice (en-US)
 Esta solicitud tiene más de una posible respuesta. User-Agent o el usuario debe escoger uno de ellos. No hay forma estandarizada de seleccionar una de las respuestas.
 
 * 301 moved Permanently (en-US)
@@ -115,11 +105,7 @@ Este código de respuesta ya no es usado más. Actualmente se encuentra reservad
 El servidor envía esta respuesta para dirigir al cliente a obtener el recurso solicitado a otra URI con el mismo método que se usó la petición anterior. Tiene la misma semántica que el código de respuesta HTTP 302 Found, con la excepción de que el agente usuario no debe cambiar el método HTTP usado: si un POST fue usado en la primera petición, otro POST debe ser usado en la segunda petición.
 
 * 308 Permanent Redirect (en-US)
-Significa que el recurso ahora se encuentra permanentemente en otra URI, especificada por la respuesta de encabezado HTTP Location:. Tiene la misma semántica que el código de respuesta HTTP 301 Moved Permanently, con la excepción de que el agente usuario no debe cambiar el método HTTP usado: si un POST fue usado en la primera petición, otro POST debe ser usado en la segunda petición.
-
-## **Errores de cliente**
-
-* 400 Bad Request
+Significa que el recurso ahora se encuentra permanentemente en otra URI, especificada por la respuesta de encabezado HTTP Location:. Tiene la misma semántica que el código de respuesta HTTP 301 Moved Permanently, con la excepción de que el agente usuario no debe cambiar el método HTTP usado: si un POST fue usado en la primera petición, otro POST debe ser usado en la segunda petición.  | 400 Bad Request
 Esta respuesta significa que el servidor no pudo interpretar la solicitud dada una sintaxis inválida.
 
 * 401 Unauthorized
@@ -204,7 +190,7 @@ El servidor no está dispuesto a procesar la solicitud porque los campos de enca
 El usuario solicita un recurso ilegal, como alguna página web censurada por algún gobierno.
 Errores de servidor
 
-* 500 Internal Server Error
+ | 500 Internal Server Error
 El servidor ha encontrado una situación que no sabe cómo manejarla.
 
 * 501 Not Implemented (en-US)
@@ -235,5 +221,10 @@ El servidor detectó un ciclo infinito mientras procesaba la solicitud.
 Extensiones adicionales para la solicitud son requeridas para que el servidor las cumpla.
 
 * 511 Network Authentication Required (en-US)
-El código de estado 511 indica que el cliente necesita autenticar para obtener acceso a la red.
+El código de estado 511 indica que el cliente necesita autenticar para obtener acceso a la red.   |
 
+## **Respuestas satisfactorias**
+GET: El recurso se ha obtenido y se transmite en el cuerpo del mensaje.
+HEAD: Los encabezados de entidad están en el cuerpo del mensaje.
+PUT o POST: El recurso que describe el resultado de la acción se transmite en el cuerpo del mensaje.
+TRACE: El cuerpo del mensaje contiene el mensaje de solicitud recibido por el servidor.
