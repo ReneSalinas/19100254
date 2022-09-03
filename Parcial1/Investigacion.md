@@ -4,31 +4,31 @@
 * HTTP define un conjunto de métodos de petición para indicar la acción que se desea realizar para un recurso determinado. Aunque estos también pueden ser sustantivos, estos métodos de solicitud a veces son llamados HTTP verbs. Cada uno de ellos implementan una semántica diferente, pero algunas características similares son compartidas por un grupo de ellos.
 
 1. **GET**
-* El método GET solicita una representación de un recurso específico. Las peticiones que usan el método GET sólo deben recuperar datos.
+El método GET solicita una representación de un recurso específico. Las peticiones que usan el método GET sólo deben recuperar datos.
 
 2. **HEAD**
-* El método HEAD pide una respuesta idéntica a la de una petición GET, pero sin el cuerpo de la respuesta.
+El método HEAD pide una respuesta idéntica a la de una petición GET, pero sin el cuerpo de la respuesta.
 
 3. **POST**
-* El método POST se utiliza para enviar una entidad a un recurso en específico, causando a menudo un cambio en el estado o efectos secundarios en el servidor.
+El método POST se utiliza para enviar una entidad a un recurso en específico, causando a menudo un cambio en el estado o efectos secundarios en el servidor.
 
 4. **PUT**
-* El modo PUT reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.
+El modo PUT reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.
 
 5. **DELETE**
-* El método DELETE borra un recurso en específico.
+El método DELETE borra un recurso en específico.
 
 6. **CONNECT**
-* El método CONNECT establece un túnel hacia el servidor identificado por el recurso.
+El método CONNECT establece un túnel hacia el servidor identificado por el recurso.
 
 7. **OPTIONS**
-* El método OPTIONS es utilizado para describir las opciones de comunicación para el recurso de destino.
+El método OPTIONS es utilizado para describir las opciones de comunicación para el recurso de destino.
 
 8. **TRACE**
-* El método TRACE realiza una prueba de bucle de retorno de mensaje a lo largo de la ruta al recurso de destino.
+El método TRACE realiza una prueba de bucle de retorno de mensaje a lo largo de la ruta al recurso de destino.
 
 9. **PATCH**
-* El método PATCH es utilizado para aplicar modificaciones parciales a un recurso.
+El método PATCH es utilizado para aplicar modificaciones parciales a un recurso.
 
 # **CODIGOS DE RESPUESTA**
 * Los códigos de estado de respuesta HTTP indican si se ha completado satisfactoriamente una solicitud HTTP específica. Las respuestas se agrupan en cinco clases:
