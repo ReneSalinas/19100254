@@ -39,13 +39,10 @@
 4. Errores de los clientes (400–499).
 5. Errores de los servidores (500–599).
 
-| hola  | hola  | hola  | hola  | hola  |
-|---|---|---|---|---|
-| hola   | hola  | hola   | hola  | hola  |
-
 | RESPUESTAS INFORMATIVAS | Respuestas satisfactorias  | Redirecciones  | Errores de cliente  | Errores de los servidores  |
 |---|---|---|---|---|
-| 100 Continue: Esta respuesta provisional indica que todo hasta ahora está bien y que el cliente debe continuar con la solicitud o ignorarla si ya está terminada. 101 Switching Protocol
+| 100 Continue: Esta respuesta provisional indica que todo hasta ahora está bien y que el cliente debe continuar con la solicitud o ignorarla si ya está terminada. 
+* 101 Switching Protocol
 Este código se envía en respuesta a un encabezado de solicitud Upgrade (en-US) por el cliente e indica que el servidor acepta el cambio de protocolo propuesto por el agente de usuario.
 
 * 102 Processing (WebDAV (en-US))
