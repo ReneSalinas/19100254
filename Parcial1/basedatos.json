@@ -1,0 +1,8 @@
+{
+    "Trabajador":{
+        "100":{"Nombre":"Rene","edad":"25"},
+        "101":{"Nombre":"Rafael","edad":"22"},
+        "102":{"Nombre":"Rogelio","edad":"23"}
+        
+    }
+}
