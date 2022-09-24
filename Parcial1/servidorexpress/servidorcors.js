@@ -17,11 +17,11 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname,'access.log'),{fl
 
 app.use(morgan('combined',{stream: accessLogStream}))
 // Funcion meiddlemware o algo asi xd INSTAAAAALAR MORGAN de npm
-app.use((req,res)=>{
+app.use('/', (req,res,next)=>{
     console.log('Primera funcion middleware como coto')
     next()//siguiente middleware
 },
-(req,res)=>{
+(req,res,next)=>{
     console.log('Segundo ROUND funcion middleware como duki')
     next()//siguiente middleware
 }
