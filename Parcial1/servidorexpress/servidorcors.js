@@ -1,6 +1,9 @@
 const express = require('express')
 const cors = require('cors')
 const res = require('express/lib/response')
+const morgan = require('morgan')
+var fs = require('fs')
+var path = require('path')
 
 const app = express()
 
@@ -8,6 +11,21 @@ app.use(cors({ origin:"http://127.0.0.1:5500"}))
 
 app.use(express.text())
 app.use(express.json())
+
+var accessLogStream = fs.createWriteStream(path.join(__dirname,'access.log'),{flags:'a'})
+
+
+app.use(morgan('combined',{stream: accessLogStream}))
+// Funcion meiddlemware o algo asi xd INSTAAAAALAR MORGAN de npm
+app.use((req,res)=>{
+    console.log('Primera funcion middleware como coto')
+    next()//siguiente middleware
+},
+(req,res)=>{
+    console.log('Segundo ROUND funcion middleware como duki')
+    next()//siguiente middleware
+}
+)
 
 app.get('/', (req, res) => {
     //res.send('Servidor Express contestando a get puerto 8082')
