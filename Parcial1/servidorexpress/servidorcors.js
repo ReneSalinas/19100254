@@ -4,6 +4,7 @@ const res = require('express/lib/response')
 const morgan = require('morgan')
 var fs = require('fs')
 var path = require('path')
+const cadena = require('./cadena')
 
 const app = express()
 
@@ -40,12 +41,18 @@ app.post('/', (req, res) => {
 
 app.post('/texto', (req, res) => {
     console.log(req.body)
-    let may = req.body.toUpperCase()
-    let sinesp = req.body.trim()
-    let longi = req.body.length
-    res.json({mayusculas: may,
-    sinespacios: sinesp,
-    longitud: longi })
+    // let may = req.body.toUpperCase()
+    // let sinesp = req.body.trim()
+    // let longi = req.body.length
+    let may = cadena.pasarMayusculas(req.body);
+    let sinesp = cadena.quitarEspacios(req.body);
+    let longi = cadena.obtenerLongitud(req.body);
+    res.json({
+        mayusculas: may,
+        longitud: longi,
+        sinespacios: sinesp
+        
+    })
 })
 
 app.post('/json', (req,res) =>{
