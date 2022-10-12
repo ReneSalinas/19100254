@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
+  },
+  "name": "19100254modulo",
+  "version": "1.0.0",
+  "description": "MOdulo Rene",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReneSalinas/19100254.git"
+  },
+  "author": "Rene Salinas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReneSalinas/19100254/issues"
+  },
+  "homepage": "https://github.com/ReneSalinas/19100254#readme"
+}
