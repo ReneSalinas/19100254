@@ -1,18 +1,36 @@
-var pg = require('pg');
-var conString = "postgres://postgres:admin@localhost/BaseChida";
- 
-pg.connect(conString, function(err, client, done) {
-  if(err) {
-    return console.error('error fetching client from pool', err);
-  }
-  client.query('SELECT * FROM empleado', ['1'], function(err, result) {
-    //call `done()` to release the client back to the pool
-    done();
-    
-    if(err) {
-      return console.error('error running query', err);
-    }
-    console.log(result.rows[0].number);
-    //output: 1
-  });
-});
+var pg = require('pg')
+var j2x = require('json2xls')
+var fs = require('fs')
+
+const conString = {
+  user: 'postgres',
+  host: 'localhost',
+  database: 'basechida',
+  password: 'admin',
+  port: '5432'
+}
+
+var pgClient = new pg.Client(conString);
+
+pgClient.connect()
+pgClient.query('SELECT * FROM empleado')
+
+  .then(response => {
+    xls = JSON.stringify(response.rows)
+    console.log(xls)
+
+    fs.writeFileSync(`${__dirname}/excel/dat.xlsx`, j2x([{"idempleado":1,"nombre":"Rene","apellido":"Salinas"},
+    {"idempleado":2,"nombre":"Luis","apellido":"Saavedra"},
+    {"idempleado":3,"nombre":"Martin","apellido":"Sanabia"},
+    {"idempleado":6,"nombre":"Josue","apellido":"Espinoza"},
+    {"idempleado":5,"nombre":"Lesly","apellido":"Rios"},
+    {"idempleado":7,"nombre":"Alejandra","apellido":"Siller"},
+    {"idempleado":4,"nombre":"Jordan","apellido":"Diaz"}]), 
+    'binary')
+
+    pgClient.end()
+  })
+  .catch(err => {
+    console.log(err)
+    pgClient.end()
+  })
