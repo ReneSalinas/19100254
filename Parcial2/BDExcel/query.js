@@ -19,7 +19,8 @@ pgClient.query('SELECT * FROM empleado')
     xls = JSON.stringify(response.rows)
     console.log(xls)
 
-    fs.writeFileSync(`${__dirname}/excel/dat.xlsx`, j2x([{"idempleado":1,"nombre":"Rene","apellido":"Salinas"},
+    fs.writeFileSync(`${__dirname}/excel/dat.xlsx`, j2x([
+    {"idempleado":1,"nombre":"Rene","apellido":"Salinas"},
     {"idempleado":2,"nombre":"Luis","apellido":"Saavedra"},
     {"idempleado":3,"nombre":"Martin","apellido":"Sanabia"},
     {"idempleado":6,"nombre":"Josue","apellido":"Espinoza"},
