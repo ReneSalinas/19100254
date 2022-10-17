@@ -20,11 +20,11 @@ pgClient.query('SELECT * FROM empleado')
     console.log(xls)
 
     fs.writeFileSync(`${__dirname}/excel/dat.xlsx`, j2x([
-    {"idempleado":1,"nombre":"Rene","apellido":"Salinas"},
+    {"idempleado":25,"nombre":"Rene","apellido":"Salinas"},
     {"idempleado":2,"nombre":"Luis","apellido":"Saavedra"},
     {"idempleado":3,"nombre":"Martin","apellido":"Sanabia"},
     {"idempleado":6,"nombre":"Josue","apellido":"Espinoza"},
-    {"idempleado":5,"nombre":"Lesly","apellido":"Rios"},
+    {"idempleado":10,"nombre":"Lesly","apellido":"Rios"},
     {"idempleado":7,"nombre":"Alejandra","apellido":"Siller"},
     {"idempleado":4,"nombre":"Jordan","apellido":"Diaz"}]), 
     'binary')
