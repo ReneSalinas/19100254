@@ -35,16 +35,36 @@ app.get('/',function(req,res) {
 // POST
 app.post('/',function(req,res) {
     pgClient.connect()
-    pgClient.query('INSERT INTO empleado()' + req.body)
+    nombre = req.body.nombre
+    apellido = req.body.apellido
+    pgClient.query(`INSERT INTO empleado(nombre,apellido) VALUES ('${nombre}','${apellido}')`)
     .then(response => {
-        console.log(response.rows)
-        res.send(response.rows)
+        res.send(response)
     })
     
 })
 // DELETE
-
+app.delete('/',function(req,res) {
+    pgClient.connect()
+    let id = req.body.id
+    pgClient.query(`DELETE FROM empleado WHERE id ='${id}'`)
+    .then(response => {
+        res.send(`Empleado eliminado`)
+    })
+    
+})
 // PUT PATCH
+app.patch('/',function(req,res) {
+    pgClient.connect()
+    let id = req.body.id
+    let nombre = req.body.nombre
+    let apellido = req.body.apellido
+    pgClient.query(`UPDATE empleado SET nombre='${nombre}',apellido='${apellido}'  WHERE id='${id}'`)
+    .then(response => {
+        res.send(`Empleado actualizado`)
+    })
+    
+})
 
 app.listen(8085, () =>{
     console.log('Servidor express escuchando en pto 8085')
