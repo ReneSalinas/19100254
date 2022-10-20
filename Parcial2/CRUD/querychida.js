@@ -7,7 +7,7 @@ const app = express()
 app.use(express.text())
 app.use(express.json())
 
-pgClient.connect()
+
 const conString = {
     user: 'postgres',
     host: 'localhost',
@@ -17,21 +17,33 @@ const conString = {
   }
   
   var pgClient = new pg.Client(conString);
-  
+  pgClient.connect()  
   
 
 
 
 app.get('/',function(req,res) {
     
-    pgClient.query('SELECT * FROM empleado WHERE id =' + req.body)
-    .then(response => {
+    if(req.body.text!=undefined){
+        
+        pgClient.query('SELECT * FROM empleado WHERE id =' + req.body)
+        .then(response => {
         console.log(response.rows)
         res.send(response.rows)
     })
+
+    }
+    else{
+        
+    pgClient.query('SELECT * FROM empleado')
+        .then(response => {
+        console.log(response.rows)
+        res.send(response.rows)
+         })
+    }
+
     
 })
-
 // POST
 app.post('/',function(req,res) {
     
