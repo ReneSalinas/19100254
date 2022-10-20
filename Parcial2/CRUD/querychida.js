@@ -7,7 +7,7 @@ const app = express()
 app.use(express.text())
 app.use(express.json())
 
-
+pgClient.connect()
 const conString = {
     user: 'postgres',
     host: 'localhost',
@@ -23,7 +23,7 @@ const conString = {
 
 
 app.get('/',function(req,res) {
-    pgClient.connect()
+    
     pgClient.query('SELECT * FROM empleado WHERE id =' + req.body)
     .then(response => {
         console.log(response.rows)
@@ -34,7 +34,7 @@ app.get('/',function(req,res) {
 
 // POST
 app.post('/',function(req,res) {
-    pgClient.connect()
+    
     nombre = req.body.nombre
     apellido = req.body.apellido
     pgClient.query(`INSERT INTO empleado(nombre,apellido) VALUES ('${nombre}','${apellido}')`)
@@ -45,7 +45,7 @@ app.post('/',function(req,res) {
 })
 // DELETE
 app.delete('/',function(req,res) {
-    pgClient.connect()
+    
     let id = req.body.id
     pgClient.query(`DELETE FROM empleado WHERE id ='${id}'`)
     .then(response => {
@@ -55,7 +55,7 @@ app.delete('/',function(req,res) {
 })
 // PUT PATCH
 app.patch('/',function(req,res) {
-    pgClient.connect()
+    
     let id = req.body.id
     let nombre = req.body.nombre
     let apellido = req.body.apellido
