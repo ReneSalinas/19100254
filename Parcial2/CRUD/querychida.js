@@ -1,9 +1,10 @@
 const express = require('express')
-let pg = require('pg')
-
+const cors = require('cors')
 
 const app = express()
+let pg = require('pg')
 
+app.use(cors({origin:"*"}))
 app.use(express.text())
 app.use(express.json())
 
