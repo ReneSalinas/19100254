@@ -1,0 +1,28 @@
+{
+  "juegos": [
+    {
+      "nombre": "Tetris"
+    },
+    {
+      "costo": 80
+    },
+    {
+      "plataformas": [
+        "3ds",
+        "wii",
+        "xbox"
+      ]
+    },
+    {
+      "nombre": "GOW"
+    },
+    {
+      "costo": 50
+    },
+    {
+      "plataformas": [
+        "ps4"
+      ]
+    }
+  ]
+}
