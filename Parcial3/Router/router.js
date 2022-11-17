@@ -3,7 +3,7 @@ const cors = require('cors')
 const {query, json} = require('express')
 let json2xls=require('json2xls')
 
-const ruta_empleado=require('./ruta_empleado')
+const ruta_empleado=require('../rutas/ruta_empleado')
 
 const app = express()
 app.use(express.text())
