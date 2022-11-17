@@ -8,7 +8,7 @@ const ruta_empleado=require('../docrouter/rutas/ruta_empleado')
 const app = express()
 app.use(express.text())
 app.use(express.json())
-app.use(cors({origin:"http:localhost"}))
+app.use(cors({origin:"*"}))
 
 
 app.use('/empleado',ruta_empleado.router)

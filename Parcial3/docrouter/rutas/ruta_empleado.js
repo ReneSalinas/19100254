@@ -9,6 +9,18 @@ app.use(cors({origin:"*"}))
 app.use(express.text())
 app.use(express.json())
 
+/**
+* @swagger
+* /empleado:
+*   get:
+*     description: Welcome to swagger-jsdoc!
+*     responses:
+*       200:
+*         description: Returns a mysterious string.
+*/
+router.get('/', async (req, res) => {
+});
+
 
 const conString = {
     user: 'postgres',
@@ -47,7 +59,7 @@ router.get('/',function(req,res) {
     
 })
 // POST
-.post('/',function(req,res) {
+router.post('/',function(req,res) {
     
     nombre = req.body.nombre
     apellido = req.body.apellido
@@ -58,7 +70,7 @@ router.get('/',function(req,res) {
     
 })
 // DELETE
-.delete('/',function(req,res) {
+router.delete('/',function(req,res) {
     
     let id = req.body.id
     pgClient.query(`DELETE FROM empleado WHERE id ='${id}'`)
@@ -68,7 +80,7 @@ router.get('/',function(req,res) {
     
 })
 // PUT PATCH
-.patch('/',function(req,res) {
+router.patch('/',function(req,res) {
     
     let id = req.body.id
     let nombre = req.body.nombre
