@@ -42,8 +42,6 @@ app.get('/',function(req,res) {
         res.send(response.rows)
          })
     }
-
-    
 })
 // POST
 app.post('/',function(req,res) {
