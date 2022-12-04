@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <h1>Documentacion de API Gashapon.</h1>
+    <p>La funcion de esta API es de simular el funcionamiento de una maquina de gashapon, que es una maquina que insertas dinero y asi obtienes una oportunidad mas para sacar un premio por lo cual hay de muchas tematicas de gashapones.</p>
+    <p>Por lo cual al darle click al boton de 5$ MAS es por una jugada mas y sacar un premio mas.</p>
+    <br>
+    <h2>FUNCIONA CON:</h2>
+    <p>Lo unico necesario para funcionar que necesitas de algo exterior sera la url de la imagen del premio a desear.</p>
+    
+    <br>
+    <h2>CRUD</h2>
+    <h3>*CREATE o INSERTAR</h3>
+    <p>La formula para realizar la peticion de INSERTAR sera de esta forma, estas insertando un nuevo premio a la API solo escribiendo su nombre, descripcion y la url de la imagen:</p>
+    <p><b>POST:</b></p>
+    <p>https://OrnateBitesizedCore.revis8466.repl.co/agregaPremio</p>
+    <p><b>BODY:</b></p>
+    <p>Json Content:</p>
+    <p>{</p>
+    <p>
+    "nombre":"zoro",
+    <br>
+    "descripcion":"zoro todo chikito todo ciego",
+    <br>
+    "urlpremio":"https://m.media-amazon.com/images/I/41TLriknCBL.jpg"</p>
+    <p>}</p>
+    <p><b>200:</b></p>
+    <p>Publicado exitoso</p>
+    
+    <br>
+    <h3>*READ o LEER</h3>
+    <p>La formula para realizar la peticion de LEER sera de esta forma, estas realizando esto para poder ver o consultar una lista completa actualizada de la base de datos de premios:</p>
+    <p><b>GET:</b></p>
+    <p>https://OrnateBitesizedCore.revis8466.repl.co/listadepremios</p>
+    <p><b>200:</b></p>
+    <p>Regresa lista de premios o productos.</p>
+
+    <br>
+    <h3>*UPDATE(PATCH) o ACTUALIZAR</h3>
+    <p>La formula para realizar la peticion de PATCH sera de esta forma,estas haciendo esta peticion para editar algun dato del premio:</p>
+    <p><b>PATCH:</b></p>
+    <p>https://OrnateBitesizedCore.revis8466.repl.co/editar</p>
+    <p><b>BODY:</b></p>
+    <p>Json Content</p>
+    <p>
+    {
+      <br>
+      "idproducto":9,
+      <br>
+      "nombre":"luffy cabezon mini",
+      <br>
+      "descripcion":"luffy pero cabezon bonito",
+      <br>
+      "urlpremio":"https://cf.shopee.com.mx/file/f5d79fc18bd306f3b7d415c44972b6e8"
+      <br>
+    }
+    </p>
+    <p><b>200:</b></p>
+    <p>Producto Actualizado.</p>
+
+    <br>
+    <h3>*DELETE o ELIMINAR</h3>
+    <p>La formula para realizar la peticion de ELIMINAR sera de esta forma, realizas esta peticion para eliminar de la base de datos el registro que quieres:</p>
+    <p><b>DEL:</b></p>
+    <p>https://OrnateBitesizedCore.revis8466.repl.co/eliminar</p>
+    <p><b>BODY:</b></p>
+    <p>Json Content</p>
+    <p>{
+    <br>
+    "idproducto":14
+    <br> 
+    }
+    </p>
+    <p><b>200:</b></p>
+    <p>PRODUCTO eliminado.</p>
+    
+
+    <script src="src/script.js"></script>
+  </body>
+</html>

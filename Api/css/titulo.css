@@ -1,0 +1,12 @@
+.titulo{
+  text-align: center;
+	text-transform: capitalize;
+	line-height: 100%;
+	font-size: 60px;
+	color: goldenrod;
+  background-color:rgba(0,0,0, .5);
+  ;
+}
+a{
+  background-color:white
+}

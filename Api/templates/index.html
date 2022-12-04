@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Running Successfull</title>
+    <link rel="stylesheet" href="chido.css">
+    <link rel="stylesheet" href="boton.css">
+    <link rel="stylesheet" href="titulo.css">
+    <link rel="stylesheet" href="index.js">
+    <link rel="stylesheet" href="grid.js">
+
+  <style>
+    body {
+      background-image: url('https://cdn.shopify.com/s/files/1/0268/7015/3269/collections/55276182-shinjuku-tokio-diciembre-1-2015-maquina-expendedora-capsula-juguete-o-gashapon-en-idioma-japones-cerca-del_1200x1200.jpg?v=1598685298');
+      background-repeat: no-repeat;
+      background-attachment: fixed;  
+      background-size: 100% 100%;
+    }    
+</style>
+    
+  </head>
+  <body>
+    <div id="titulo" class="titulo">☆FELICIDADES TU PREMIOOO ES☆</div>
+    <main id="container">
+        <img src="" alt="" id="imagen">
+    </main>
+
+    
+    
+  <div id="wrapper">
+  <a href="#" class="my-super-cool-btn" id="btnxd">
+    <div class="dots-container">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <span>5$ MAS!</span>
+  </a>
+</div>
+
+    <a href="/documentacion.html">DOCUMENTACION</a>
+    
+<div id="wrapper1"></div>    
+
+</body>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script src="grid.js"></script>
+<script>
+    
+  document.getElementById("btnxd").addEventListener("click", function () {
+      
+    fetch("https://ornatebitesizedcore.revis8466.repl.co/premio")
+    .then(res => res.json()) 
+    .then(result =>{
+      console.log(result.urlpremio)
+      document.getElementById("imagen").src = result.urlpremio
+    })
+  })
+
+  
+</script>
+</html>

@@ -1,0 +1,12 @@
+#container{
+  display: flex;
+  justify-content: center;
+}
+#imagen{
+  width:15%;
+  margin-top:80px;
+}
+
+#wrapper{
+  
+}
